@@ -136,6 +136,7 @@ def main():
 	while alive:
 		print_board(board)
 		guess = raw_input("\n>> Guess a square: ").upper()
+		# runs and returns guesses_left and hit values
 		hit, guesses_left = check_guess(guess, boat_loc1, boat_loc2, guesses_left, hit)
 		
 
