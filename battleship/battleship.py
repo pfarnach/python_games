@@ -70,7 +70,7 @@ def gen_boat():
 	boat_loc1 = boat_loc_int(random_col1, random_row1)
 	boat_loc2 = boat_loc_int(random_col2, random_row2)
 
-	print boat_loc1, boat_loc2
+	# print boat_loc1, boat_loc2
 
 	return boat_loc1, boat_loc2
 
@@ -90,6 +90,8 @@ def check_guess(guess, boat_loc1, boat_loc2, guesses_left, hit):
 	# checks to see if boat was previously hit and if this guess is a hit = win
 	if (guess == boat_loc1 or guess == boat_loc2) and hit > 0:
 		clear()
+		print
+		print
 		print "Nice, you DESTROYED the boat! Good going, sport.\n"
 		update_map("X ", guess)
 		print_board(board)
@@ -106,7 +108,7 @@ def check_guess(guess, boat_loc1, boat_loc2, guesses_left, hit):
 	elif guesses_left <= 0:
 		clear()
 		print
-		print "You're out of ammo, bro.\n"
+		print "\nYou're out of ammo, bro.\n"
 		update_map("--", guess)
 		print_board(board)
 		print
@@ -127,6 +129,8 @@ def main():
 	alive = True
 	guesses_left = 10
 	hit = False
+
+	print "Welcome to Battleship!  There's a boat that's two units long and you have to seek and destroy it."
 
 	# generates two adjacent boat coordinates
 	boat_loc1, boat_loc2 = gen_boat()
